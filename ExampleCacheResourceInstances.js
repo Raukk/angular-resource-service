@@ -1,11 +1,11 @@
-module.service('User', function (CachedResource) {
-    return new CachedResource().build('User', '/api/User/:_id');
+module.service('One', function (CachedResource) {
+    return new CachedResource().build('One', '/api/One/:_id');
 });
 
-module.service('ChatMessage', function (CachedResource) {
-    return new CachedResource().build('ChatMessage', '/api/ChatMessage/:_id');
+module.service('Two', function (CachedResource) {
+    return new CachedResource().build('Two', '/api/Two/:_id');
 });
 
-module.service('Author', function (CachedResource) {
-    return new CachedResource().build('Author', '/api/Author/:_id');
+module.service('Three', function (CachedResource) {
+    return new CachedResource().build('Three', '/api/Three/:_id');
 });
