@@ -4,7 +4,7 @@ This is some generic code I have been working on for managing Angular Resource c
 
 
 In my standard files I declare my module in it's own file, then bring in the cacheResource Utility, the Instances are dependent on the Utility, and finally the controler, which is dependent on the Instances.
-<pre><code><xmp><script src="js/ModuleDeclaration.js"></script>
+<pre><code><xmp><script>var module = angular.module('module', ['ngResource']);</script>
 <script src="js/CacheResourceUtility.js"></script>
 <script src="js/CacheResourceInstances.js"></script>
 <script src="js/YourController.js"></script>
