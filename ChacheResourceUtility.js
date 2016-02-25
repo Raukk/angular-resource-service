@@ -86,10 +86,28 @@ module.factory('CacheRefreshUtility', function ()
 			{
 				var newValue = cacheResourceService.get({'_id' : oldValue._id}, function()
 				{
-					rebuild.push(newValue);	
-					if(chainDependencies)
+					if(newValue)
 					{
-						chainDependencies(newValue);
+						rebuild.push(newValue);	
+						if(chainDependencies)
+						{
+							chainDependencies(newValue);
+						}
+					}
+				});
+			}
+			else
+			{
+				//this assumes that it is just a list of ids
+				var newValue = cacheResourceService.get({'_id' : oldValue}, function()
+				{
+					if(newValue)
+					{
+						rebuild.push(newValue);	
+						if(chainDependencies)
+						{
+							chainDependencies(newValue);
+						}
 					}
 				});
 			}
